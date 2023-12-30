@@ -1,0 +1,237 @@
+body {
+    font-family: 'Gill Sans', sans-serif;
+    margin: 0;
+    background-color: #373635;
+}
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.page-buttons a {
+    border-radius: 10px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 100px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.dropdown-btn {
+    content-visibility: hidden;
+    display: none;
+}
+
+.dropdown-content {
+    content-visibility: hidden;
+}
+
+.page-buttons a:hover {
+    border-radius: 10px;
+    padding: 20px 50px;
+    background-color: #ddd;
+    color: black;
+}
+
+.img-container {
+    transform: translateY(25px);
+    max-width: 60%;
+    user-select: none;
+    pointer-events: none;
+    display: flexbox;
+    margin:auto;
+    border-radius: 15px;
+}
+
+.img-container .text {
+    color: white;
+    font-size: 25px;
+    display: flex;
+}
+
+.img-container .text .info {
+    padding-top: 9px;
+    padding-left: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.img-container .featured img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    display: flex;
+}
+
+.footer .instagram {
+        font-size: 25px;
+        border: none;
+        content-visibility: visible;
+        background: none;
+        color: white;
+        cursor: pointer;
+        display: block;
+        transform: translate(5px, 2px);
+}
+
+.footer .facebook {
+        font-size: 25px;
+        border: none;
+        content-visibility: visible;
+        background: none;
+        color: white;
+        cursor: pointer;
+        display: block;
+        transform: translate(10px, 2px);
+
+}
+
+.footer .email {
+    font-size: 25px;
+    border: none;
+    content-visibility: visible;
+    background: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    transform: translate(15px, 2px);
+
+}
+
+.footer .share {
+    font-size: 25px;
+    border: none;
+    content-visibility: visible;
+    background: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    transform: translate(20px, 1px);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+    .page-buttons {
+        display: none;
+    }
+
+    .logo {
+        width: 70%;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .navbar {
+        display: flex;
+        padding-top: 5px;
+        transition: 0.5s;
+    }
+
+    .dropdown-btn {
+        font-size: 12px;
+        border: none;
+        content-visibility: visible;
+        background: none;
+        color: white;
+        cursor: pointer;
+        display: block;
+        transform: translate(33em, -2em);
+        transition: 0.5s;
+    }
+
+    .navbar.open {
+        transform: translateY(12.5em);
+    }
+
+    .dropdown-content {
+        content-visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #373635;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .dropdown.clicked .dropdown-content {
+        height: 195px;
+        content-visibility: visible;
+    }
+
+    .dropdown.clicked .dropdown-btn {
+        transform: translate(33em, 8em);
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 15px 20px;
+        text-decoration: none;
+        display: block;
+        transition: height 0.5s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+        color: black;
+        
+    }
+
+    .img-container {
+        transform: translateY(25px);
+        max-width: 90%;
+        user-select: none;
+        pointer-events: none;
+        display: flexbox;
+        margin:auto;
+        border-radius: 15px;
+        transition:  0.5s;
+    }
+    
+    .img-container .text {
+        color: white;
+        font-size: 20px;
+        display: block;
+        max-width: 100%;
+        transition:  0.5s;
+    }
+    
+    .img-container .text .info {
+        color: white;
+        font-size: 15px;
+        padding: 0;
+        transition:  0.5s;
+    }
+    
+    .img-container .featured img{
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition:  0.5s;
+    }
+
+    .dropdown.clicked .img-container {
+        transform: translateY(13em);
+    }
+    
+}
