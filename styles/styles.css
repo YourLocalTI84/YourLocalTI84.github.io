@@ -2,14 +2,23 @@ body {
     font-family: 'Gill Sans', sans-serif;
     margin: 0;
     background-color: #373635;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+    -ms-overflow-style: 0;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .navbar {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
-    height: 100px;
+    padding-top: 1vh;
+    height: fit-content;
 }
 
 .logo img {
@@ -23,9 +32,9 @@ body {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 20px 100px;
+    padding: 3vh 7vh;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1em;
     transition: 0.5s;
 }
 
@@ -40,93 +49,76 @@ body {
 
 .page-buttons a:hover {
     border-radius: 10px;
-    padding: 20px 50px;
+    padding: 2vh 5vh;
     background-color: #ddd;
     color: black;
 }
 
 .img-container {
-    transform: translateY(25px);
+    transform: translateY(2vh);
     max-width: 60%;
     user-select: none;
     pointer-events: none;
     display: flexbox;
-    margin:auto;
+    margin: auto;
     border-radius: 15px;
 }
 
 .img-container .text {
     color: white;
-    font-size: 25px;
+    font-size: 1.6em;
     display: flex;
 }
 
 .img-container .text .info {
-    padding-top: 9px;
-    padding-left: 10px;
+    padding-top: 1vh;
+    padding-left: 1vh;
     color: white;
-    font-size: 15px;
+    font-size: 0.6em;
 }
 
-.img-container .featured img{
+.img-container .featured img {
     max-width: 100%;
-    max-height: 100%;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .footer {
     display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 1vh;
+    margin-top: -50vh;
 }
 
-.footer .instagram {
-        font-size: 25px;
-        border: none;
-        content-visibility: visible;
-        background: none;
-        color: white;
-        cursor: pointer;
-        display: block;
-        transform: translate(5px, 2px);
-}
-
-.footer .facebook {
-        font-size: 25px;
-        border: none;
-        content-visibility: visible;
-        background: none;
-        color: white;
-        cursor: pointer;
-        display: block;
-        transform: translate(10px, 2px);
-
-}
-
-.footer .email {
-    font-size: 25px;
+.footer a {
+    width: 100%;
+    font-size: 2em;
     border: none;
+    padding: 0.05vh;
     content-visibility: visible;
     background: none;
     color: white;
     cursor: pointer;
     display: block;
-    transform: translate(15px, 2px);
-
 }
 
-.footer .share {
-    font-size: 25px;
-    border: none;
-    content-visibility: visible;
-    background: none;
-    color: white;
-    cursor: pointer;
-    display: block;
-    transform: translate(20px, 1px);
-}
-
+/*Mobile - 0 to 767, Tablet - 768 to 1023, Desktop - 1024+*/
 /* Mobile Styles */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 0px) and (max-width: 767px) {
+
+    body {
+        overflow-y: scroll;
+        scrollbar-width: 0;
+        -ms-overflow-style: 0;
+        overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
     .page-buttons {
         display: none;
     }
@@ -139,24 +131,24 @@ body {
 
     .navbar {
         display: flex;
-        padding-top: 5px;
+        padding-top: 3vh;
         transition: 0.5s;
     }
 
     .dropdown-btn {
-        font-size: 12px;
+        font-size: 0.75em;
         border: none;
         content-visibility: visible;
         background: none;
         color: white;
         cursor: pointer;
         display: block;
-        transform: translate(33em, -2em);
+        transform: translate(82vw, -2vh);
         transition: 0.5s;
     }
 
     .navbar.open {
-        transform: translateY(12.5em);
+        transform: translateY(30vh);
     }
 
     .dropdown-content {
@@ -174,17 +166,17 @@ body {
     }
 
     .dropdown.clicked .dropdown-content {
-        height: 195px;
+        height: 30vh;
         content-visibility: visible;
     }
 
     .dropdown.clicked .dropdown-btn {
-        transform: translate(33em, 8em);
+        transform: translate(82vw, 16vh);
     }
 
     .dropdown-content a {
         color: white;
-        padding: 15px 20px;
+        padding: 2.4vh 3vw; 
         text-decoration: none;
         display: block;
         transition: height 0.5s;
@@ -193,45 +185,65 @@ body {
     .dropdown-content a:hover {
         background-color: #ddd;
         color: black;
-        
     }
 
     .img-container {
-        transform: translateY(25px);
+        transform: translateY(0);
         max-width: 90%;
         user-select: none;
         pointer-events: none;
         display: flexbox;
-        margin:auto;
+        margin: auto;
         border-radius: 15px;
-        transition:  0.5s;
+        transition: 0.5s;
     }
-    
+
     .img-container .text {
         color: white;
-        font-size: 20px;
+        font-size: 2.5vh;
         display: block;
         max-width: 100%;
-        transition:  0.5s;
+        transition: 0.5s;
     }
-    
+
     .img-container .text .info {
         color: white;
-        font-size: 15px;
+        font-size: 2.2vh;
         padding: 0;
-        transition:  0.5s;
+        transition: 0.5s;
     }
-    
-    .img-container .featured img{
+
+    .img-container .featured img {
         max-width: 100%;
         max-height: 100%;
         border-radius: 15px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transition:  0.5s;
+        transition: 0.5s;
     }
 
     .dropdown.clicked .img-container {
-        transform: translateY(13em);
+        transform: translateY(30vh);
+    }
+
+    .footer {
+        margin: 0 auto;
+        width: fit-content;
+        flex-direction: row;
+        position: relative;
+        margin-top: 35vh;
+        transition: 0.5s;
+    }
+
+    .footer div {
+    margin: 10px;
+    }
+
+    .footer a {
+        padding: 0vh;
     }
     
+    .dropdown.clicked .footer {
+        margin-top: 65vh;
+    }
+
 }
